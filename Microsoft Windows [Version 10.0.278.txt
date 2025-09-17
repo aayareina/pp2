@@ -1,0 +1,367 @@
+Microsoft Windows [Version 10.0.27858.1000]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Ayanat>git config --global user.name "aayareina"
+
+C:\Users\Ayanat>git config --global user.email "akylbek.ayanat@gmail.com"
+
+C:\Users\Ayanat>git config --global --list
+core.editor="C:\Users\Ayanat\AppData\Local\Programs\Microsoft VS Code\bin\code" --wait
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=aayareina
+user.email=akylbek.ayanat@gmail.com
+
+C:\Users\Ayanat>git config --global init.defaultBranch main
+
+C:\Users\Ayanat>git config --global core.autocrlf true
+
+C:\Users\Ayanat>git config --global core.safecrlf warn
+
+C:\Users\Ayanat>mkdir work
+
+C:\Users\Ayanat>cd work
+
+C:\Users\Ayanat\work>echo Hello, World > hello.html
+
+C:\Users\Ayanat\work>git status
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\Ayanat\work>git init
+Initialized empty Git repository in C:/Users/Ayanat/work/.git/
+
+C:\Users\Ayanat\work>git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git commit -m "Первый коммит: добавлен hello.html"
+[main (root-commit) 1631e97] Первый коммит: добавлен hello.html
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>cd work
+Системе не удается найти указанный путь.
+
+C:\Users\Ayanat\work>notepad hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git commit -m "Обновил hello.html: добавил тег <h1>"
+[main 61aac66] Обновил hello.html: добавил тег <h1>
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git commit -m "Обновил hello.html: добавил тег <h1>"
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git commit
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git commit -m "Added h1 tag"
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git log --oneline
+61aac66 (HEAD -> main) Обновил hello.html: добавил тег <h1>
+1631e97 Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git log
+commit 61aac66447e7e213eda92f1d8a3829af8f830a7b (HEAD -> main)
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   Wed Sep 17 22:34:25 2025 +0500
+
+    Обновил hello.html: добавил тег <h1>
+
+commit 1631e97f1cf2cb6224415f48f1b51fc2ae4eab87
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   Wed Sep 17 22:18:28 2025 +0500
+
+    Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git log --pretty=oneline
+61aac66447e7e213eda92f1d8a3829af8f830a7b (HEAD -> main) Обновил hello.html: добавил тег <h1>
+1631e97f1cf2cb6224415f48f1b51fc2ae4eab87 Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git log --pretty=oneline
+61aac66447e7e213eda92f1d8a3829af8f830a7b (HEAD -> main) Обновил hello.html: добавил тег <h1>
+1631e97f1cf2cb6224415f48f1b51fc2ae4eab87 Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git log --pretty=oneline
+61aac66447e7e213eda92f1d8a3829af8f830a7b (HEAD -> main) Обновил hello.html: добавил тег <h1>
+1631e97f1cf2cb6224415f48f1b51fc2ae4eab87 Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git commit -m "Added h1 tag"
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git commit -m "Added h1 tag"
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>git log --oneline
+61aac66 (HEAD -> main) Обновил hello.html: добавил тег <h1>
+1631e97 Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>notepad hello.html
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>notepad hello.html\
+
+C:\Users\Ayanat\work>notepad hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+
+C:\Users\Ayanat\work>git commit -m "Added standard HTML page tags"
+[main 989673e] Added standard HTML page tags
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+C:\Users\Ayanat\work>git add .
+
+C:\Users\Ayanat\work>git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.html
+
+
+C:\Users\Ayanat\work>git commit -m "Added HTML header"
+[main 35f4582] Added HTML header
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\Ayanat\work>git log
+commit 35f458249b2d9531f586eea13ad0ae3592d68d30 (HEAD -> main)
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   Wed Sep 17 23:39:56 2025 +0500
+
+    Added HTML header
+
+commit 989673e88e0fcb6f9f1a0abbaade2c7f8f789a86
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   Wed Sep 17 23:39:04 2025 +0500
+
+    Added standard HTML page tags
+
+commit 61aac66447e7e213eda92f1d8a3829af8f830a7b
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   Wed Sep 17 22:34:25 2025 +0500
+
+    Обновил hello.html: добавил тег <h1>
+
+commit 1631e97f1cf2cb6224415f48f1b51fc2ae4eab87
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   Wed Sep 17 22:18:28 2025 +0500
+
+    Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git log --pretty=format:"%h %ad | %s%d [%an]" --date=short
+35f4582 2025-09-17 | Added HTML header (HEAD -> main) [aayareina]
+989673e 2025-09-17 | Added standard HTML page tags [aayareina]
+61aac66 2025-09-17 | Обновил hello.html: добавил тег <h1> [aayareina]
+1631e97 2025-09-17 | Первый коммит: добавлен hello.html [aayareina]
+
+C:\Users\Ayanat\work>git config --global format.pretty '%h %ad | %s%d [%an]'
+"%s%d" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\Users\Ayanat\work>git config --global log.date short
+
+C:\Users\Ayanat\work>git checkout <hash>
+Ошибка в синтаксисе команды.
+
+C:\Users\Ayanat\work>cat hello.html
+
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+
+C:\Users\Ayanat\work>git switch main
+Already on 'main'
+
+C:\Users\Ayanat\work>cat hello.html
+
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+
+C:\Users\Ayanat\work>git tag v1
+
+C:\Users\Ayanat\work>git log
+commit 35f458249b2d9531f586eea13ad0ae3592d68d30 (HEAD -> main, tag: v1)
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Added HTML header
+
+commit 989673e88e0fcb6f9f1a0abbaade2c7f8f789a86
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Added standard HTML page tags
+
+commit 61aac66447e7e213eda92f1d8a3829af8f830a7b
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Обновил hello.html: добавил тег <h1>
+
+commit 1631e97f1cf2cb6224415f48f1b51fc2ae4eab87
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git checkout v1^
+Продолжить? cat hello.html
+error: pathspec 'v1cat' did not match any file(s) known to git
+
+C:\Users\Ayanat\work>git tag v1-beta
+
+C:\Users\Ayanat\work>git log
+commit 35f458249b2d9531f586eea13ad0ae3592d68d30 (HEAD -> main, tag: v1-beta, tag: v1)
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Added HTML header
+
+commit 989673e88e0fcb6f9f1a0abbaade2c7f8f789a86
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Added standard HTML page tags
+
+commit 61aac66447e7e213eda92f1d8a3829af8f830a7b
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Обновил hello.html: добавил тег <h1>
+
+commit 1631e97f1cf2cb6224415f48f1b51fc2ae4eab87
+Author: aayareina <akylbek.ayanat@gmail.com>
+Date:   2025-09-17
+
+    Первый коммит: добавлен hello.html
+
+C:\Users\Ayanat\work>git switch main
+Already on 'main'
+
+C:\Users\Ayanat\work>notepad hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Ayanat\work>git restore hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>cat hello.html
+
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+
+C:\Users\Ayanat\work>notepad hello.html
+
+C:\Users\Ayanat\work>git add hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.html
+
+
+C:\Users\Ayanat\work>git restore --staged hello.html
+
+C:\Users\Ayanat\work>git restore hello.html
+
+C:\Users\Ayanat\work>git status
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\Ayanat\work>
