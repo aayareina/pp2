@@ -42,11 +42,13 @@ pygame.display.set_caption("RACER")
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("Enemy.jpeg")
+        self.image = pygame.image.load("Enemy.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
     def move(self):
+        print("enemy move")
+
         global SCORE
         self.rect.move_ip(0, SPEED)
         if self.rect.top > 600:
@@ -59,11 +61,14 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("Player.jpeg")
+        self.image = pygame.image.load("Player.png")
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
+        DISPLAYSURF.blit(self.image, self.rect.center )
 
     def move(self):
+        print("player move")
+
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[K_LEFT] and self.rect.left > 0:
             self.rect.move_ip(-5, 0)
@@ -81,6 +86,7 @@ class Coin(pygame.sprite.Sprite):
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
     def move(self):
+        print("coint move")
         self.rect.move_ip(0, 5)
         if self.rect.top > SCREEN_HEIGHT:
             self.rect.top = 0
@@ -102,7 +108,7 @@ pygame.time.set_timer(INC_SPEED, 1000)
 
 # GAME LOOP
 while True:
-
+    print("I am here")
     for event in pygame.event.get():
         if event.type == INC_SPEED:
             SPEED += 0.5
@@ -118,19 +124,22 @@ while True:
     coin_text = font_small.render("Coins: " + str(COINS), True, BLACK)
     DISPLAYSURF.blit(coin_text, (300, 10))
 
+    pygame.display.update()
+
     for entity in all_sprites:
+        print("i am at forik")
         entity.move()
         DISPLAYSURF.blit(entity.image, entity.rect)
 
     # COLLISION WITH ENEMY
-    if pygame.sprite.spritecollideany(P1, enemies):
-        time.sleep(0.5)
-        DISPLAYSURF.fill(BLACK)
-        DISPLAYSURF.blit(game_over, (30, 250))
-        pygame.display.update()
-        time.sleep(2)
-        pygame.quit()
-        sys.exit()
+    # if pygame.sprite.spritecollideany(P1, enemies):
+    #     time.sleep(0.5)
+    #     DISPLAYSURF.fill(BLACK)
+    #     DISPLAYSURF.blit(game_over, (30, 250))
+    #     pygame.display.update()
+    #     time.sleep(2)
+    #     pygame.quit()
+    #     sys.exit()
 
     # COLLISION WITH COIN
     if pygame.sprite.collide_rect(P1, C1):
@@ -138,5 +147,4 @@ while True:
         C1.rect.top = 0
         C1.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
-    pygame.display.update()
     FramePerSec.tick(FPS)
